@@ -12,6 +12,18 @@ The configuration file will look like this:
 <?php
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | NAMESPACE
+    |--------------------------------------------------------------------------
+    |
+    | The namespace where your DTOs will be created.
+    |
+    */
+
+    'namespace' => 'App\\DTOs',
+
     /*
     |--------------------------------------------------------------------------
     | REQUIRE CASTING
@@ -22,6 +34,7 @@ return [
     | \WendellAdriel\ValidatedDTO\Exceptions\MissingCastTypeException exception
     |
     */
+
     'require_casting' => false,
 ];
 ```

@@ -2,10 +2,10 @@
 
 ### Mapping data before validation
 
-Sometimes the data you have to validate is not the same as you want in your DTO. You can use the `mapBeforeValidation` method to map your data before the validation and the DTO instantiation occurs:
+Sometimes the data you have to validate is not the same as you want in your DTO. You can use the `mapData` method to map your data before the validation and the DTO instantiation occurs:
 
 ```php
-protected function mapBeforeValidation(): array
+protected function mapData(): array
 {
     return [
         'full_name' => 'name',
@@ -47,10 +47,10 @@ But in your Request, the data comes like this:
 ]
 ```
 
-You can add this to the `mapBeforeValidation` method:
+You can add this to the `mapData` method:
 
 ```php
-protected function mapBeforeValidation(): array
+protected function mapData(): array
 {
     return [
         'first_name' => 'name.first_name',
@@ -61,12 +61,12 @@ protected function mapBeforeValidation(): array
 
 This way, the `first_name` and `last_name` properties will be mapped to the `name.first_name` and `name.last_name` properties of your request.
 
-### Mapping data before export
+### Mapping data before transforming
 
-Sometimes the data you have in your DTO is not the same as you want in your Model, Array, or JSON. You can use the `mapBeforeExport` method to map your data before exporting your DTO to another structure:
+Sometimes the data you have in your DTO is not the same you want to your Model, Array, JSON. You can use the `mapToTransform` method to map your data before transforming your DTO to another structure:
 
 ```php
-protected function mapBeforeExport(): array
+protected function mapToTransform(): array
 {
     return [
         'name' => 'username',
@@ -74,7 +74,7 @@ protected function mapBeforeExport(): array
 }
 ```
 
-The code above will map the `name` property to the `username` property before exporting your DTO to another structure. So the resulting structure will have a `username` property instead of a `name` property.
+The code above will map the `name` property to the `username` property before transforming your DTO to another structure. So the resulting structure will have a `username` property instead of a `name` property.
 
 #### **Mapping nested data to flat data**
 
@@ -109,10 +109,10 @@ class User extends Model
 }
 ```
 
-You can add this to the `mapBeforeExport` method:
+You can add this to the `mapToTransform` method:
 
 ```php
-protected function mapBeforeExport(): array
+protected function mapToTransform(): array
 {
     return [
         'name.first_name' => 'first_name',
@@ -123,4 +123,4 @@ protected function mapBeforeExport(): array
 
 This way, when calling the `toModel` method, the `name.first_name` and `name.last_name` properties of your DTO will be mapped to the `first_name` and `last_name` properties of your Model.
 
-You can combine both methods to map your data before validation and before export. If you combine both examples above your request will have a `full_name` property, your DTO will have a `name` property and when exported the result will have a `username` property.
+You can combine both methods to map your data before validation and before transformation. If you combine both examples above your request will have a `full_name` property, your DTO will have a `name` property and when transformed the result will have a `username` property.
