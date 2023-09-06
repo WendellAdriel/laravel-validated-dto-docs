@@ -6,6 +6,7 @@
 
 * [Installation](getting-started/installation.md)
 * [Configuration](getting-started/configuration.md)
+* [Upgrade Guide](getting-started/upgrade-guide.md)
 
 ## 😎 The Basics <a href="#basics" id="basics"></a>
 
