@@ -12,6 +12,7 @@ description: Data Transfer Objects with validation for Laravel applications
 
 * Easily integrate it with your current project
 * Data validation the same way you validate a **Request**
+* Use the DTO the same way you use a **Form Request** in your controllers
 * Easily define **custom validation messages**
 * Support for **typed properties**
 * **Type Casting** out-of-the-box for your DTOs properties
@@ -19,9 +20,7 @@ description: Data Transfer Objects with validation for Laravel applications
 * Easily create **custom Type Casters** for your own needs
 * Custom data mapping
 * Use DTOs for wrapping, typing and transforming API responses
-* [**Laravel Livewire**](https://laravel-livewire.com/) support
-* Use DTOs for wrapping, typing and transforming API responses
-* [**Laravel Livewire**](https://laravel-livewire.com/) support
+* [**Laravel Livewire**](https://livewire.laravel.com/) support
 
 ### Why use this package
 
