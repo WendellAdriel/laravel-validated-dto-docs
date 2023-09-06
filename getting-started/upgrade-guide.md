@@ -1,12 +1,12 @@
-# Configuration
+# Upgrade Guide
 
-Publish the config file:
+I tried to maintain backward compatibility as much as possible, but there are some breaking changes while
+upgrading from v2 to v3.
 
-```
-php artisan vendor:publish --provider="WendellAdriel\ValidatedDTO\Providers\ValidatedDTOServiceProvider" --tag=config
-```
+## Configuration
 
-The configuration file will look like this:
+If you published the config file before, or if you want to customize the path/namespace used to generate your DTOs,
+you'll need to merge the new config file with your old one or publish it. This is the new config file:
 
 ```php
 <?php
@@ -38,3 +38,10 @@ return [
     'require_casting' => false,
 ];
 ```
+
+## Mapping DTO data
+
+The methods used to map the DTO data were renamed to be more accurate:
+
+- `mapBeforeValidation()` was renamed to `mapData()`
+- `mapBeforeExport()` was renamed to `mapToTransform()`

@@ -20,14 +20,14 @@ class SimpleUserDTO extends SimpleDTO
             'age' => new IntegerCast(),
         ];
     }
-    protected function mapBeforeValidation(): array
+    protected function mapData(): array
     {
         return [
             'username' => 'name',
             'user_email' => 'email',
         ];
     }
-    protected function mapBeforeExport(): array
+    protected function mapToTransform(): array
     {
         return [
             'name' => 'customer_name',
