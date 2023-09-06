@@ -3,6 +3,10 @@
 I tried to maintain backward compatibility as much as possible, but there are some breaking changes while
 upgrading from v2 to v3.
 
+## PHP version
+
+The minimum PHP version required is now 8.1.
+
 ## Configuration
 
 If you published the config file before, or if you want to customize the path/namespace used to generate your DTOs,
