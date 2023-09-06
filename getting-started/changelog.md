@@ -9,3 +9,6 @@ Here's a quick overview of the new features in the latest major versions of the 
 - DTO classes generated with the make command are more slim
 - Ability to cast array items when using the `ArrayCast`
 - New `EnumCast` for casting values to Enums. Work with `UnitEnum` and `BackedEnum`
+- `mapBeforeValidation()` was renamed to `mapData()`
+- `mapBeforeExport()` was renamed to `mapToTransform()`
+- `->toJson()` method now returns a JSON string without any formatting. Use `->toPrettyJson()` instead
