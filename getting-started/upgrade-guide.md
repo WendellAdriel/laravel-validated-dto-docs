@@ -49,3 +49,9 @@ The methods used to map the DTO data were renamed to be more accurate:
 
 - `mapBeforeValidation()` was renamed to `mapData()`
 - `mapBeforeExport()` was renamed to `mapToTransform()`
+
+## Transforming the DTO
+
+If you're using the `->toJson()` method passing `true` as argument to transform it to a formatted JSON string, you'll
+need to use the `->toPrettyJson()` method instead, since the `->toJson()` method now returns a JSON string without any
+formatting.

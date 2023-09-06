@@ -8,10 +8,12 @@ class SimpleUserDTO extends SimpleDTO
     public string $name;
     public string $email;
     public int $age;
+
     protected function defaults(): array
     {
         return [];
     }
+
     protected function casts(): array
     {
         return [
@@ -20,6 +22,7 @@ class SimpleUserDTO extends SimpleDTO
             'age' => new IntegerCast(),
         ];
     }
+
     protected function mapData(): array
     {
         return [
@@ -27,6 +30,7 @@ class SimpleUserDTO extends SimpleDTO
             'user_email' => 'email',
         ];
     }
+
     protected function mapToTransform(): array
     {
         return [

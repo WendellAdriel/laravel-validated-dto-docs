@@ -5,9 +5,6 @@ Sometimes we can have properties that are optional and that can have default val
 ```php
 class UserDTO extends ValidatedDTO
 {
-    /**
-     * @return array
-     */
     protected function rules(): array
     {
         return [
@@ -25,12 +22,7 @@ class UserDTO extends ValidatedDTO
             ],
         ];
     }
-    
-    /**
-     * Defines the default values for the properties of the DTO.
-     *
-     * @return array
-     */
+
     protected function defaults(): array
     {
         return [

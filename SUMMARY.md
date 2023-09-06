@@ -17,7 +17,7 @@
 * [Creating DTO Instances](basics/creating-dto-instances.md)
 * [Accessing DTO Data](basics/accessing-dto-data.md)
 * [Defining Default Values](basics/defining-default-values.md)
-* [Converting DTO Data](basics/converting-dto-data.md)
+* [Transforming DTO Data](basics/transforming-dto-data.md)
 * [Mapping DTO properties](basics/mapping-dto-properties.md)
 * [Simple DTOs](basics/simple-dtos.md)
 * [Resource DTOs](basics/resource-dtos.md)

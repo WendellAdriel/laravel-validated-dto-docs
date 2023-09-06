@@ -5,13 +5,6 @@
 You can easily create new `Castable` types for your project by implementing the `WendellAdriel\ValidatedDTO\Casting\Castable` interface. This interface has a single method that must be implemented:
 
 ```php
-/**
- * Casts the given value.
- *
- * @param  string  $property
- * @param  mixed  $value
- * @return mixed
- */
 public function cast(string $property, mixed $value): mixed;
 ```
 
@@ -20,11 +13,6 @@ Let's say that you have a `URLWrapper` class in your project, and you want that 
 ```php
 class URLCast implements Castable
 {
-    /**
-     * @param  string  $property
-     * @param  mixed  $value
-     * @return URLWrapper
-     */
     public function cast(string $property, mixed $value): URLWrapper
     {
         return new URLWrapper($value);
