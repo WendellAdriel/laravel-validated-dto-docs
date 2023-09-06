@@ -21,3 +21,16 @@ property in the `config/dto.php` file:
 
 'namespace' => 'App\\DTOs',
 ```
+
+Compared to v2, the generated DTO from v3 is more simple and only contains the most used methods:
+
+- `rules()` (For Validated DTOs only)
+- `defaults()`
+- `casts()`
+
+If you want to customize further your DTO add the missing methods when needed.
+
+- `messages()`
+- `attributes()`
+- `mapData()`
+- `mapToTransform()`

@@ -37,6 +37,16 @@ public function store(Request $request): JsonResponse
 }
 ```
 
+Starting in **v3**, you can also use the DTO as it was a **Form Request** class, so instead of manually creating the DTO instance,
+you can type-hint the DTO in the controller method, and it will be automatically created for you:
+
+```php
+public function store(UserDTO $dto): JsonResponse
+{
+    // ...
+}
+```
+
 ### From Eloquent Models
 
 ```php
