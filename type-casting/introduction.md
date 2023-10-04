@@ -12,3 +12,18 @@ protected function casts(): array
     ];
 }
 ```
+
+If you don't want to cast any of the properties, you can use the `EmptyCasts` trait to avoid having to define the `casts()` method.
+
+```php
+use WendellAdriel\ValidatedDTO\Concerns\EmptyCasts;
+
+class UserDTO extends ValidatedDTO
+{
+    use EmptyCasts;
+
+    public string $name;
+
+    public string $email;
+}
+```

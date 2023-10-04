@@ -15,7 +15,23 @@ protected function mapData(): array
 
 The code above will map the `full_name` property to the `name` property before the DTO instantiation. So your Request/Array/etc can have a `full_name` property and your DTO will have a `name` property instead.
 
-#### **Mapping nested data to flat data**
+Alternatively, for simpler cases, you can use the `Map` attribute, defining the `data` parameter:
+
+```php
+use WendellAdriel\ValidatedDTO\Attributes\Map;
+
+class UserDTO extends ValidatedDTO
+{
+    #[Map(data: 'full_name')]
+    public string $name;
+
+    public string $email;
+
+    public bool $active;
+}
+```
+
+#### Mapping nested data to flat data
 
 Imagine that you have a `NameDTO` like this:
 
@@ -76,7 +92,23 @@ protected function mapToTransform(): array
 
 The code above will map the `name` property to the `username` property before transforming your DTO to another type. So the resulting type will have a `username` property instead of a `name` property.
 
-#### **Mapping nested data to flat data**
+Alternatively, for simpler cases, you can use the `Map` attribute, defining the `transform` parameter:
+
+```php
+use WendellAdriel\ValidatedDTO\Attributes\Map;
+
+class UserDTO extends ValidatedDTO
+{
+    #[Map(transform: 'username')]
+    public string $name;
+
+    public string $email;
+
+    public bool $active;
+}
+```
+
+#### Mapping nested data to flat data
 
 Imagine that you have a `UserDTO` like this:
 

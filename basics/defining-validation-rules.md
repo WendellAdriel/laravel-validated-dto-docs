@@ -23,3 +23,26 @@ class UserDTO extends ValidatedDTO
     }
 }
 ```
+
+Alternatively, for simpler cases, you can use the `Rules` attribute:
+
+```php
+use WendellAdriel\ValidatedDTO\Attributes\Rules;
+use WendellAdriel\ValidatedDTO\Concerns\EmptyRules;
+
+class UserDTO extends ValidatedDTO
+{
+    use EmptyRules;
+
+    #[Rules(['required', 'string', 'min:3', 'max:255'])]
+    public string $name;
+
+    #[Rules(rules: ['required', 'email', 'max:255'], messages: ['email.email' => 'The given email is not a valid email address.'])]
+    public string $email;
+
+    #[Rules(['sometimes', 'boolean'])]
+    public bool $active;
+}
+```
+
+If you're using attributes to validate your data, you can use the `EmptyRules` trait to avoid having to define the `rules()` method.
