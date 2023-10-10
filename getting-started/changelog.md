@@ -2,6 +2,10 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 3.2.0
+
+- Added the `Cast` attribute to define custom casting for DTO properties
+
 ## 3.1.0
 
 - Added the `Rules` attribute to define custom validation rules for DTO properties
