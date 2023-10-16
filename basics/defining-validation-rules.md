@@ -46,3 +46,27 @@ class UserDTO extends ValidatedDTO
 ```
 
 If you're using attributes to validate your data, you can use the `EmptyRules` trait to avoid having to define the `rules()` method.
+
+## Additional Validation
+
+Like the **Form Requests**, you can easily add additional validation for your DTOs by implementing their `after` method.
+
+The `ValidatedDTO` has this method already, but it's not doing anything by default:
+
+```php
+protected function after(\Illuminate\Validation\Validator $validator): void
+{
+    // Do nothing
+}
+```
+
+You can override this method in your DTO to add any additional validations that are needed:
+
+```php
+protected function after(\Illuminate\Validation\Validator $validator): void
+{
+    if ($this->invalidData) {
+        $validator->errors()->add('test', 'Data is invalid!');
+    }
+}
+```
