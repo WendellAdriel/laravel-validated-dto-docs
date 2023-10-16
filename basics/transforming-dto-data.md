@@ -60,10 +60,14 @@ $dto->toModel(\App\Models\User::class);
 
 Be aware that when transforming the DTO, all the properties are also going to be transformed:
 
-`Collection`, `Model` and `DTO` properties will have their nested data transformed using the `->toArray()` method.
+`Scalar Data Type` and `Array` properties will **preserve their values**.
+
+`stdClass` properties will be transformed into arrays using **type casting**.
 
 `UnitEnum` properties are going to be transformed into the **case name**.
 
 `BackedEnum` properties are going to be transformed into the **case value**.
 
 `Carbon` and `CarbonImmutable` properties are going to be transformed into strings using the `->toISOString()` method.
+
+`Collection`, `Model` and `DTO` properties will have their nested data transformed using the same logic as above.
