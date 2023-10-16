@@ -55,3 +55,15 @@ $dto->toModel(\App\Models\User::class);
 //     password: "s3CreT!@1a2B",
 // }
 ```
+
+## Transforming Nested Data
+
+Be aware that when transforming the DTO, all the properties are also going to be transformed:
+
+`Collection`, `Model` and `DTO` properties will have their nested data transformed using the `->toArray()` method.
+
+`UnitEnum` properties are going to be transformed into the **case name**.
+
+`BackedEnum` properties are going to be transformed into the **case value**.
+
+`Carbon` and `CarbonImmutable` properties are going to be transformed into strings using the `->toISOString()` method.
