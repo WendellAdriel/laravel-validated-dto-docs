@@ -34,3 +34,8 @@ If you want to customize further your DTO add the missing methods when needed.
 - `attributes()`
 - `mapData()`
 - `mapToTransform()`
+
+## Customizing DTO Stubs
+
+You can publish the DTO stubs to customize them to your needs with the `dto:stubs` command. This will create the stubs
+in a `stubs` folder at the root of the project.
