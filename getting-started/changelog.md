@@ -2,6 +2,11 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 3.4.0
+
+- Added the `dto:stubs` command to publish the DTO stubs to be customized.
+- Fixed issue with file validation.
+
 ## 3.3.0
 
 - Added the `after` method to `ValidatedDTO` to be able to use the **After Hook** when validating data
