@@ -2,6 +2,10 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 3.7.0
+
+- The `buildDataForExport` method is now protected, making it possible to create custom Data Transformer methods for the DTOs.
+
 ## 3.6.0
 
 - The `$data` property resets to an empty array after the DTO is initialized.
