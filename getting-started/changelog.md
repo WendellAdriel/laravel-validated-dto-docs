@@ -2,6 +2,14 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 3.6.0
+
+- The `$data` property resets to an empty array after the DTO is initialized.
+
+## 3.5.0
+
+- Laravel 11 support.
+
 ## 3.4.0
 
 - Added the `dto:stubs` command to publish the DTO stubs to be customized.
