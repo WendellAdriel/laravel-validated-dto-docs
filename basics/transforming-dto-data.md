@@ -57,7 +57,14 @@ $dto->toModel(\App\Models\User::class);
 ```
 
 ### Custom transforming
-If you want to build your own DataTransformer, you can use `buildDataForExport()` to retrieve the validated data with your custom mappings.
+If you want to build your own Data Transformer, you can use the `buildDataForExport()` method to retrieve the validated data with your custom mappings.
+
+```php
+public function toObject(): object
+{
+    return (object) $this->buildDataForExport();
+}
+```
 
 ## Transforming Nested Data
 
