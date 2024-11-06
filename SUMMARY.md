@@ -22,6 +22,7 @@
 * [Simple DTOs](basics/simple-dtos.md)
 * [Resource DTOs](basics/resource-dtos.md)
 * [Wireable DTOs](basics/wireable-dtos.md)
+* [Lazy Validation](basics/lazy-validation.md)
 
 ## 🎨 Customize
 
