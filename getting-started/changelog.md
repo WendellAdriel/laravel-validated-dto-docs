@@ -2,6 +2,10 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 3.10.0
+
+* Added Lazy Validation feature.
+
 ## 3.9.0
 
 * Renamed the `$data` property to `$dtoData` and marked it as `internal` to avoid issues with conflicts.
