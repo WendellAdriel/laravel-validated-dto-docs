@@ -2,6 +2,12 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 4.0.0
+
+* Added support for Laravel 12.
+* Removed support for Laravel 9 and 10.
+* Removed support for PHP 8.1, minimum version now is 8.2.
+
 ## 3.10.0
 
 * Added Lazy Validation feature.
