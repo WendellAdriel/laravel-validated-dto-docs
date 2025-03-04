@@ -2,6 +2,10 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 4.1.0
+
+* Added feature for generating TypeScript definitions from DTOs.
+
 ## 4.0.0
 
 * Added support for Laravel 12.

@@ -23,6 +23,7 @@
 * [Resource DTOs](basics/resource-dtos.md)
 * [Wireable DTOs](basics/wireable-dtos.md)
 * [Lazy Validation](basics/lazy-validation.md)
+* [Generating TypeScript Definitions](basics/generating-typescript-definitions.md)
 
 ## 🎨 Customize
 
