@@ -2,6 +2,12 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 4.3.0
+
+* Added new `Lazy` attribute.
+* Added new `Provide` attribute.
+* Added new `Receive` attribute.
+
 ## 4.1.0
 
 * Added feature for generating TypeScript definitions from DTOs.

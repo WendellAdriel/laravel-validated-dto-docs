@@ -77,6 +77,25 @@ protected function mapData(): array
 
 This way, the `first_name` and `last_name` properties will be mapped to the `name.first_name` and `name.last_name` properties of your request.
 
+#### The `Receive` attribute
+
+You can use the `Receive` attribute when you want to map all the incoming data in a particular character casing, for example, you may receive all the data from your UI in `snake_case`, but the properties in the DTO are in `camelCase`, so instead of mapping each property individually, you can use the `Receive` attribute:
+
+```php
+#[Receive(PropertyCase::SnakeCase)]
+class UserDTO extends ValidatedDTO
+{
+    public string $firstName;
+    public string $lastName;
+}
+
+// Accept snake_case input
+$dto = new UserDTO([
+    'first_name' => 'John',
+    'last_name' => 'Doe'
+]);
+```
+
 ### Mapping data before transforming
 
 Sometimes the data you have in your DTO is not the same you want to your Model, Array, JSON. You can use the `mapToTransform` method to map your data before transforming your DTO to another type:
@@ -156,3 +175,20 @@ protected function mapToTransform(): array
 This way, when calling the `toModel` method, the `name.first_name` and `name.last_name` properties of your DTO will be mapped to the `first_name` and `last_name` properties of your Model.
 
 You can combine both methods to map your data before instantiation and before transformation. If you combine both examples above your request will have a `full_name` property, your DTO will have a `name` property and when transformed the result will have a `username` property.
+
+#### The `Provide` attribute
+
+You can use the `Provide` attribute when you want to transform all the DTO data to a particular character casing, for example, you may need to connect to a 3rd-party service that accepts all the input in `PascalCase`, but the properties in the DTO are in `camelCase`, so instead of mapping each property individually, you can use the `Provide` attribute:
+
+```php
+#[Provide(PropertyCase::PascalCase)]
+class UserDTO extends ValidatedDTO
+{
+    public string $firstName;
+    public string $lastName;
+}
+
+// Provide PascalCase output
+$dto->toArray();
+// ['FirstName' => 'John', 'LastName' => 'Doe']
+```

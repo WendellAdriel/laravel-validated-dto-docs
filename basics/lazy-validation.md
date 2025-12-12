@@ -34,3 +34,15 @@ class MyDTO extends ValidatedDTO implements LivewireWireable
     public bool $lazyValidation = true;
 }
 ```
+
+#### The `Lazy` attribute
+
+As an alternative, instead of setting the `$lazyValidation` as `true` in your DTO class, you can add the `Lazy` attribute to it, it will work the same way as described above.
+
+```php
+#[Lazy]
+class UserDTO extends ValidatedDTO
+{
+    // DTO definition here
+}
+```
