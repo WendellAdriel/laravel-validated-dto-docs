@@ -2,6 +2,10 @@
 
 Here's a quick overview of the new features in the latest major versions of the package.
 
+## 4.4.0
+
+* Added new `SkipOnTransform` attribute.
+
 ## 4.3.0
 
 * Added new `Lazy` attribute.

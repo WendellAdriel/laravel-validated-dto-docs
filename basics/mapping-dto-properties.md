@@ -176,6 +176,33 @@ This way, when calling the `toModel` method, the `name.first_name` and `name.las
 
 You can combine both methods to map your data before instantiation and before transformation. If you combine both examples above your request will have a `full_name` property, your DTO will have a `name` property and when transformed the result will have a `username` property.
 
+#### The `SkipOnTransform` attribute
+
+Sometimes you don't want to create an array, JSON or Model with all the properties from the DTO. For that, you can use the SkipOnTransform attribute.
+
+```php
+final class UserDTO extends SimpleDTO
+{
+    use EmptyCasts,
+        EmptyDefaults,
+        EmptyRules;
+
+    #[Rules(['required', 'string'])]
+    public string $name;
+
+    #[Cast(IntegerCast::class)]
+    #[SkipOnTransform]
+    #[Rules(['required', 'integer'])]
+    public int $age;
+}
+```
+
+With the above, when calling methods like `$dto->toArray()`, the array won't have the `age` property set.
+
+```php
+$dto->toArray(); // ['name' => 'John Doe']
+```
+
 #### The `Provide` attribute
 
 You can use the `Provide` attribute when you want to transform all the DTO data to a particular character casing, for example, you may need to connect to a 3rd-party service that accepts all the input in `PascalCase`, but the properties in the DTO are in `camelCase`, so instead of mapping each property individually, you can use the `Provide` attribute:
