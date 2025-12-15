@@ -200,6 +200,11 @@ final class UserDTO extends SimpleDTO
 With the above, when calling methods like `$dto->toArray()`, the array won't have the `age` property set.
 
 ```php
+$dto = UserDTO::fromArray([
+    'name' => 'John Doe',
+    'age' => '20',
+]);
+
 $dto->toArray(); // ['name' => 'John Doe']
 ```
 
